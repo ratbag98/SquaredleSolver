@@ -25,10 +25,8 @@ Release configuration) and away you go.). Find the executable (in
 `./SquardleSolver/SquardleSolver/bin/Release/net7.0`) and put it somewhere
 useful.
 
-Currently you need to modify the `wordListPath` to point to the included
-`word_list.txt` file.
-
-TODO add configuration of `wordListPath`.
+Specify the word list path with the `-w` option. Run the program with the
+`--help` option for more details.
 
 ### Running the solver
 
@@ -158,11 +156,11 @@ repetitions are dropped.
 
 ## Roadmap
 
-- [ ] Configuration for `wordListPath`
-- [ ] Expose the board and neighbour list via command line flags
+- [x] Configuration for `wordListPath`
+- [x] Expose the board and neighbour list via command line flags
 - [ ] Optionally Group solutions by word length (as used in the puzzle)
 - [ ] Optionally separate results for "common" vs "uncommon" words
-- [ ] Command-line help
+- [x] Command-line help
 - [ ] Keep word list up to date
 - [ ] Some graphical pizazz to show word formation in the grid
 - [ ] Live update of the search like in the movies
