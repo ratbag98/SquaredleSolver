@@ -21,7 +21,9 @@ The project was built inside Visual Studio for Mac. If you're not using that
 weird beast then I can't help you.
 
 Clone the repo and add the solution to Visual Studio. Build (probably in
-Release configuration) and away you go.). Find the executable (in `./SquardleSolver/SquardleSolver/bin/Release/net7.0`) and put it somewhere useful.
+Release configuration) and away you go.). Find the executable (in
+`./SquardleSolver/SquardleSolver/bin/Release/net7.0`) and put it somewhere
+useful.
 
 Currently you need to modify the `wordListPath` to point to the included
 `word_list.txt` file.
@@ -87,11 +89,14 @@ to trim the list appropriately.
 ## Roadmap
 
 - [ ] Configuration for `wordListPath`
+- [ ] Expose the board and neighbour list via command line flags
+- [ ] Optionally Group solutions by word length (as used in the puzzle)
+- [ ] Optionally separate results for "common" vs "uncommon" words
+- [ ] Command-line help
 - [ ] Keep word list up to date
-- [ ] Separate results for "common" vs "uncommon" words
-- [ ] Group solutions by word length (as used in the puzzle)
 - [ ] Some graphical pizazz to show word formation in the grid
-- [ ] Live update of the search (like in the movies)
+- [ ] Live update of the search like in the movies
+- [ ] Reverse the logic somewhat in order to generate puzzles
 
 ## Contributing
 
@@ -110,5 +115,5 @@ Project link: <https://github.com/ratbag98/SquardleSolver.git>
 
 ## Acknowledgements
 
-Trie code from: <https://github.com/AndrewMcShane/DevMakingSource>
-Word list from: <https://github.com/dwyl/english-words.git>
+- Trie code from: <https://github.com/AndrewMcShane/DevMakingSource>
+- Word list from: <https://github.com/dwyl/english-words.git>

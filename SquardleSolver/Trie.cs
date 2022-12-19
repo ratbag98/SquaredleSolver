@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Trie data structure
+ * Code from: https://github.com/AndrewMcShane/DevMakingSource
+ */
+
+using System;
 using System.Collections.Generic;
 
 public class Trie

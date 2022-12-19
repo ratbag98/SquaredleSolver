@@ -1,11 +1,11 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-// Use a wordlist generated like:
-
-// rg -Nw '^[a-z]{4,}$' words.txt > ../SquardleSolver/word_list.txt
-
-// to ensure only four-letter or more.
-
+﻿/*
+ * SquaredleSolver
+ * 
+ * (c) 2022 Robert Rainthorpe
+ * 
+ * Distributed under MIT licenc(s)e.
+ * 
+ */
 
 using SquardleSolver;
 using System.IO;
@@ -16,12 +16,13 @@ internal class Program
 {
     private static string wordListPath = @"/Users/rob/dev/SquardleSolver/word_list.txt";
 
+    // Simple wrapper to call the solver.
     private static void Main(string[] args)
     {
         if (args.Length > 0)
         {
-            BoardSolver board = new BoardSolver(wordListPath, args[0].ToLower());
-            Console.WriteLine(string.Join("\n", board.solveBoard()));
+            PuzzleSolver board = new PuzzleSolver(wordListPath, args[0].ToLower());
+            Console.WriteLine(string.Join("\n", board.puzzleSolutions()));
         }
         else
         {
