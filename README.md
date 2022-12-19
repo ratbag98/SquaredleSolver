@@ -86,6 +86,76 @@ rg -Nw '^[a-z]{4,}$' words.txt > ../SquardleSolver/word_list.txt
 
 to trim the list appropriately.
 
+## Basic program logic
+
+The board is represented as a character array. Most of the code uses
+indexes into this array. A function is provided that maps between grid
+coordinates and indexes.
+
+The word list is stored as a "trie" which allows for efficient searching for
+words that start with a set of letters.
+
+The solution algorithm iterates over each letter in the character array. Using
+the character it then recursively generates chains of letters. The next letter
+in the chain is selected from the last item in the chain's "neighbours". For
+example if we have a grid of letters:
+
+```text
+ABC
+DEF
+GHI
+```
+
+then the character array looks like:
+
+```text
+012345678
+ABCDEFGHI
+```
+
+(the numbers are the index into the array).
+
+We'll start with the first letter, A, index 0. To calculate the neighbours,
+imagine this grid of indexes:
+
+```text
+012
+345
+678
+```
+
+So letter A, top-left in the grid, has three neighbours: 1,3 and 4. These
+translate into the letters B, D and E. So the chain recursion routine will
+check 01, 03, 04 in turn. It actually works depth first, but this shows the
+flattened logic in the function itself.
+
+The chain recursion will check chains like 0124, 0125, 0145, 0143, 01436 etc.
+
+The chains are converted back to strings by dereferencing the puzzle character
+array (ABCE, ABCF, ABEF, etc.). If the word is in the trie structure it gets added to the solution. If
+there are words in the trie that start with the candidate "word" (string of
+letters), then we keep searching down the chain (ie call the recursive function
+with the chain and add new neighbours).
+
+If there are no further words in the trie that start with our current chain's
+letters then we go to the next neighbour and recurse into that chain.
+
+The recursion unwinds as chains fail to match anything in the trie.
+
+The recursion is called once per letter in the puzzle grid and once all the
+letters have been checked the `HashSet` of solutions is returned.
+
+A `HashSet` is used since the same word can be found in multiple ways sometimes.
+Whilst this is interesting to know, it doesn't help solve the puzzle so
+repetitions are dropped.
+
+### Possible things to try in the code as mental exercises
+
+- Pass the neighbour list in and avoid an iteration (chop item off local neighbour list as we go)
+- The trie's logic is a little opaque, there may be an optimisation to avoid some recursion.
+- Relax the uniqueness requirement, in case we want to show the solution in some graphical fashion on the grid and to include alternatives.
+- Are Iterators appropriate for the character array? We might have one to iterate in a linear fashion and another to scan through the grid left-to-right, top-to-bottom?
+
 ## Roadmap
 
 - [ ] Configuration for `wordListPath`
