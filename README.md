@@ -159,8 +159,10 @@ repetitions are dropped.
 - [x] Configuration for `wordListPath`
 - [x] Expose the board and neighbour list via command line flags
 - [ ] Optionally Group solutions by word length (as used in the puzzle)
+- [ ] Sort solutions alphabetically rather than recursively
 - [ ] Optionally separate results for "common" vs "uncommon" words
 - [x] Command-line help
+- [ ] Command-line argument aggregation (`-dlnw path`)
 - [ ] Keep word list up to date
 - [ ] Some graphical pizazz to show word formation in the grid
 - [ ] Live update of the search like in the movies
