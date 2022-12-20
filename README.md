@@ -2,6 +2,10 @@
 
 ## About this project
 
+NOTE: abandoning this project and C# in general since MS have deliberately
+hobbled VScode's C# environment. Seems like Embrace Extend Extinguish is
+still a thing. Shame, the language is very pleasant and performs well. 
+
 NOTE: appalling C# code ahead - this was my very first C# program.
 
 Noddy C# program to solve the daily [Squaredle puzzle](https://squaredle.app/)
