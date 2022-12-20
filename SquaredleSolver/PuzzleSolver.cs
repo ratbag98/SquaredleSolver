@@ -116,9 +116,35 @@ namespace SquaredleSolver
 
             List<String> formattedSolutions = solutions.ToList();
 
-            if (alphaSort) { formattedSolutions.Sort();  }
+            if (alphaSort || groupByLength) { formattedSolutions.Sort();  }
 
-            return formattedSolutions;
+            if (groupByLength)
+            {
+                List<String> groupedSolutions = new();
+
+                var groupByWordLengthQuery =
+                    from word in formattedSolutions
+                    group word by word.Length into newGroup
+                    orderby newGroup.Key
+                    select newGroup;
+
+                foreach (var lengthGroup in groupByWordLengthQuery)
+                {
+                    groupedSolutions.Add($"{lengthGroup.Key} letters\n");
+
+                    foreach (var word in lengthGroup)
+                    {
+                        groupedSolutions.Add($"{word}");
+                    }
+                    groupedSolutions.Add("");
+                }
+
+                return groupedSolutions;
+            } else
+            {
+
+                return formattedSolutions;
+            }
         }
 
 

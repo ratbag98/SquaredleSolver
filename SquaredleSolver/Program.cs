@@ -40,6 +40,7 @@ internal class Program
             Console.WriteLine($"Neighbourhood:\n{board.getNeighbours()}");
         }
 
+        // TODO should catch exception when letters are not square
         board.solvePuzzle();
         List<String> solutions = board.getSolutions(options.alphaSort, options.groupByLength);
 
@@ -52,8 +53,6 @@ internal class Program
         List<String> argList = args.ToList<String>();
 
         Options options = new();
-
-        //TODO another option is sorting the solution, separate from grouping
 
         // gradually remove items from front of args list
         while (argList.Count > 0)
@@ -176,6 +175,7 @@ OPTIONS:
 
     -l
         Group the solutions by word length (default is unordered, ungrouped).
+        Setting this option will automatically sort the list alphabetically.
 
     -n
         Print the neighbour list before the solution. Useful for debugging.
