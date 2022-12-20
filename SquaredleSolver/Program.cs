@@ -40,7 +40,8 @@ internal class Program
             Console.WriteLine($"Neighbourhood:\n{board.getNeighbours()}");
         }
 
-        List<String> solutions = board.puzzleSolutions(options.alphaSort, options.groupByLength);
+        board.solvePuzzle();
+        List<String> solutions = board.getSolutions(options.alphaSort, options.groupByLength);
 
         Console.WriteLine(string.Join("\n", solutions));
 

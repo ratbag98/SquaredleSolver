@@ -28,6 +28,8 @@ namespace SquaredleSolver
         // HashSet used since I wan't unique results
         private HashSet<String> solutions = new();
 
+        private Boolean solutionGenerated = false;
+
         // Main entry point for class. Construct a puzzle from a string of letters
         public PuzzleSolver(String wordListPath, String letters)
         {
@@ -92,7 +94,7 @@ namespace SquaredleSolver
 
         // Generate a list of valid words that abide by the rules of Squaredle,
         // in no particular order unless options are specified
-        public List<String> puzzleSolutions(Boolean alphaSort = false, Boolean groupByLength = false)
+        public void solvePuzzle()
         {
 
             // top-level is letter-by-letter as entered by user
@@ -104,8 +106,19 @@ namespace SquaredleSolver
 
                 checkLetterChains(chain);
             }
-            return solutions.ToList();
 
+            solutionGenerated = true;
+        }
+
+        public List<String> getSolutions(Boolean alphaSort = false, Boolean groupByLength = false)
+        {
+            if (!solutionGenerated) { throw new InvalidOperationException(); }
+
+            List<String> formattedSolutions = solutions.ToList();
+
+            if (alphaSort) { formattedSolutions.Sort();  }
+
+            return formattedSolutions;
         }
 
 
