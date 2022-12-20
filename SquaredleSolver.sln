@@ -3,10 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 25.0.1704.2
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquardleSolver", "SquardleSolver\SquardleSolver.csproj", "{6A11C2E2-F0BD-46D6-B5E4-800F27FE3DE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaredleSolver", "SquaredleSolver\SquaredleSolver.csproj", "{6A11C2E2-F0BD-46D6-B5E4-800F27FE3DE2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquardleTests", "SquardleTests\SquardleTests.csproj", "{6A0EA01D-A865-4C97-B1EE-A4064FA5E21A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SquaredleTests", "SquaredleTests\SquaredleTests.csproj", "{6A0EA01D-A865-4C97-B1EE-A4064FA5E21A}"
 EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +22,14 @@ Global
 		{6A0EA01D-A865-4C97-B1EE-A4064FA5E21A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A0EA01D-A865-4C97-B1EE-A4064FA5E21A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A0EA01D-A865-4C97-B1EE-A4064FA5E21A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C6AC56-A0F9-45A7-A3BB-0F920A35DC66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C6AC56-A0F9-45A7-A3BB-0F920A35DC66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C6AC56-A0F9-45A7-A3BB-0F920A35DC66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C6AC56-A0F9-45A7-A3BB-0F920A35DC66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E9A48B0-3942-4556-905E-CD85380A138A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E9A48B0-3942-4556-905E-CD85380A138A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E9A48B0-3942-4556-905E-CD85380A138A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E9A48B0-3942-4556-905E-CD85380A138A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

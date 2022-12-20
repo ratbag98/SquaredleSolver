@@ -1,13 +1,13 @@
-﻿using SquardleSolver;
+﻿using SquaredleSolver;
 
-namespace SquardleTests;
+namespace SquaredleTests;
 
 [TestClass]
-public class SquardleSolverTests
+public class SquaredleSolverTests
 {
     private static String goodLetters = "ABCDEFGHI";
 
-    private static string wordListPath = @"/Users/rob/dev/SquardleSolver/test_word_list.txt";
+    private static string wordListPath = @"/Users/rob/dev/SquaredleSolver/test_word_list.txt";
 
     [TestMethod]
     public void TestSizeCheckWithValidLetters()

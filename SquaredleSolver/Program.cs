@@ -1,13 +1,13 @@
 ﻿/*
  * SquaredleSolver
- * 
+ *
  * (c) 2022 Robert Rainthorpe
- * 
+ *
  * Distributed under MIT licenc(s)e.
- * 
+ *
  */
 
-using SquardleSolver;
+using SquaredleSolver;
 using System.IO;
 using System.Collections.Generic;
 using System;
@@ -15,7 +15,7 @@ using System.Text.RegularExpressions;
 
 internal class Program
 {
-    private static string wordListPath = @"/Users/rob/dev/SquardleSolver/word_list.txt";
+    private static string wordListPath = @"/Users/rob/dev/SquaredleSolver/word_list.txt";
 
 
 
@@ -40,7 +40,7 @@ internal class Program
             Console.WriteLine($"Neighbourhood:\n{board.getNeighbours()}");
         }
 
-        List<String> solutions = board.puzzleSolutions();
+        List<String> solutions = board.puzzleSolutions(options.alphaSort, options.groupByLength);
 
         Console.WriteLine(string.Join("\n", solutions));
 
@@ -62,6 +62,10 @@ internal class Program
             {
                 help();
                 Environment.Exit(-2);
+            } else if (nextArg == "-a")
+            {
+                options.alphaSort = true;
+                argList.RemoveAt(0);
             }
             else if (nextArg == "-g")
             {
@@ -129,15 +133,13 @@ internal class Program
     private static void showOptions(String message)
     {
         // might get clever in future
-        String programName = "SquardleSolver";
-
-
+        String programName = "SquaredleSolver";
 
         Console.WriteLine(message);
 
         Console.WriteLine("USAGE:\n");
         Console.WriteLine($"\t{programName} [OPTIONS] LETTERS");
-        Console.WriteLine($"\t{programName} [OPTIONS] -w PATH LETTERS");
+        Console.WriteLine($"\t{programName} [OPTIONS] -w PATH LETTERS\n");
     }
 
     private static void help()
@@ -161,6 +163,10 @@ internal class Program
         A word list file.
 
 OPTIONS:
+    -a
+        Sort solutions alphabetically, rather than ""how they emerged from the
+        algorithm""
+
     -d
         Differentiate between common and uncommon words in the solution list.
 
@@ -169,11 +175,9 @@ OPTIONS:
 
     -l
         Group the solutions by word length (default is unordered, ungrouped).
+
     -n
         Print the neighbour list before the solution. Useful for debugging.
-   
-
-    
 "
 );
     }
@@ -187,19 +191,21 @@ OPTIONS:
             printNeighbourhood = false;
             groupByLength = false;
             differentiate = false;
+            alphaSort = false;
             letters = "";
 
         }
-        public String path = wordListPath;
-        public Boolean printGrid = false;
-        public Boolean printNeighbourhood = false;
-        public Boolean groupByLength = false;
-        public Boolean differentiate = false;
-        public String letters = "";
+        public String path;
+        public Boolean printGrid;
+        public Boolean printNeighbourhood;
+        public Boolean groupByLength;
+        public Boolean differentiate;
+        public String letters;
+        public Boolean alphaSort;
 
         public override String ToString()
         {
-            return $"Word list path: {path}\nGrid: {printGrid}\nNeighbourhooud: {printNeighbourhood}\nLength group: {groupByLength}\nDifferentiate: {differentiate}\nLetters: {letters}";
+            return $"Word list path: {path}\nGrid: {printGrid}\nNeighbourhooud: {printNeighbourhood}\nLength group: {groupByLength}\nDifferentiate: {differentiate}\nLetters: {letters}\nAlpha Sort: {alphaSort}";
 
         }
 

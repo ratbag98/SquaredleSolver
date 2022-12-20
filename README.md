@@ -22,7 +22,7 @@ weird beast then I can't help you.
 
 Clone the repo and add the solution to Visual Studio. Build (probably in
 Release configuration) and away you go.). Find the executable (in
-`./SquardleSolver/SquardleSolver/bin/Release/net7.0`) and put it somewhere
+`./SquaredleSolver/SquaredleSolver/bin/Release/net7.0`) and put it somewhere
 useful.
 
 Specify the word list path with the `-w` option. Run the program with the
@@ -42,12 +42,12 @@ So we run the solver with the letters, organised as a single string reading
 the grid from left to right, top to bottom:
 
 ```bash
-./SquardleSolver GACSNEWID
+./SquaredleSolver GACSNEWID
 ```
 
 (upper or lower-case, live a little).
 
-The program will check that the letters can represent a Squardle grid. There
+The program will check that the letters can represent a Squaredle grid. There
 should be a "square" number of letters (eg 3x3, 4x4, 5x5, etc). If the number
 of letters is not square the program will quit.
 
@@ -79,7 +79,7 @@ substitute it. You should trim short words from it (only include four letters
 and more). I used:
 
 ```bash
-rg -Nw '^[a-z]{4,}$' words.txt > ../SquardleSolver/word_list.txt
+rg -Nw '^[a-z]{4,}$' words.txt > ../SquaredleSolver/word_list.txt
 ```
 
 to trim the list appropriately.
@@ -181,7 +181,7 @@ about English vs American English spelling, thanks.
 
 ## Contact
 
-Project link: <https://github.com/ratbag98/SquardleSolver.git>
+Project link: <https://github.com/ratbag98/SquaredleSolver.git>
 
 ## Acknowledgements
 

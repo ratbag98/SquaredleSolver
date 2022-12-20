@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 
-namespace SquardleSolver
+namespace SquaredleSolver
 {
     public class PuzzleSolver
     {
@@ -72,7 +72,7 @@ namespace SquardleSolver
 
 
         // Use a wordlist generated like:
-        // rg -Nw '^[a-z]{4,}$' words.txt > ../SquardleSolver/word_list.txt
+        // rg -Nw '^[a-z]{4,}$' words.txt > ../SquaredleSolver/word_list.txt
         // to ensure only four-letter or more.
         public void readWordList(String path)
         {
@@ -91,8 +91,8 @@ namespace SquardleSolver
         }
 
         // Generate a list of valid words that abide by the rules of Squaredle,
-        // in no particular order
-        public List<String> puzzleSolutions()
+        // in no particular order unless options are specified
+        public List<String> puzzleSolutions(Boolean alphaSort = false, Boolean groupByLength = false)
         {
 
             // top-level is letter-by-letter as entered by user
@@ -244,4 +244,3 @@ namespace SquardleSolver
 
     }
 }
-
