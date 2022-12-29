@@ -6,7 +6,7 @@ NOTE: abandoning this project and C# in general since MS have deliberately
 hobbled VScode's C# environment. Seems like Embrace Extend Extinguish is
 still a thing. Shame, the language is very pleasant and performs well.
 
-With that in mind, go and check my [Python version](https://github.com/ratbag98/PySquaredle) instead: 
+With that in mind, go and check my [Python version](https://github.com/ratbag98/PySquaredle) instead.
 
 NOTE: appalling C# code ahead - this was my very first C# program.
 
